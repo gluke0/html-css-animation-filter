@@ -99,7 +99,7 @@
 .ex-9-img:hover{
     border-radius: 20%;
     transform: scale(1.3);
-    filter: blur(3px) invert(0.3);
+    filter: blur(3px) invert(1);
 }
 
 /* esercizio 10 */
@@ -167,4 +167,106 @@
     background: #f5f5f5;
     width: 60px;
     height: 20px;
+}
+
+/* 12 */
+.ex-12-button:hover .ex-12-top-white{
+    animation: movetop 3s linear;
+}
+
+/* 0% partenza 50% punto di ritorno 100% arrivo */
+/* partenza e ritorno staccathi dal bordo sx */
+/* div bianco 60px (100% - 60px per toccare bordo estremo) */
+
+@keyframes movetop{
+    0%{
+        left: 10%;
+    }
+    50%{
+        left: calc(100% - 60px);
+    }
+    100%{
+        left: 10%;
+    }
+}
+
+.ex-12-button:hover .ex-12-bottom-white{
+    animation: movebottom 3s linear;
+}
+
+/* partenza e arrivo più staccati del top da borso dx*/
+@keyframes movebottom{
+    0%{
+        right: 20%;
+    }
+    50%{
+        right: calc(100% - 60px);
+    }
+    100%{
+        right: 20%;
+    }
+}
+
+/* 13 */
+.ex-13-button:hover .ex-13-top-white{
+    animation: looptop 3s linear;
+}
+
+/* 4 punti per ipotizzare i cambi di direzione del movimento */
+/* comincio a farlo scendere con un valore top */
+/* lo tengo spinto in basso con top sempre */
+/* tolgo margine sx per fargli coprire lato dx mentre risale */
+@keyframes looptop{
+    0%{
+        left: 10%;
+    }
+    30%{
+        left: calc(100% - 55px);
+        top: -10px;
+    }
+    45%{
+        left: calc(100% - 55px);
+        top: 90%;
+    }
+    75%{
+        left: 0%;
+        top: 90%;  
+    }
+    90%{
+        left: -20px;
+        top: -10px;
+    }
+    100%{
+        left: 10%;
+    }
+}
+
+.ex-13-button:hover .ex-13-bottom-white{
+    animation: loopbottom 3s linear;
+}
+
+
+@keyframes loopbottom{
+    0%{
+        right: 20%;
+    }
+    30%{
+        right: calc(100% - 55px);
+        bottom: -10px;
+    }
+    45%{
+        right: calc(100% - 55px);
+        bottom: 90%;
+    }
+    75%{
+        right: 0%;
+        bottom: 90%;
+    }
+    90%{
+        right: -20px;
+        bottom: -10px;
+    }
+    100%{
+        right: 20%;
+    }
 }
